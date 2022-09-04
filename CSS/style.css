@@ -1,0 +1,111 @@
+/*  ( * ->this "*"  is called universal selector  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    /* font-family: */
+    color: rgb(45, 134, 207)
+}
+
+.wrapper {
+    max-width: 1440;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    /* for vertical align */
+    align-items: center;
+    /* for horizontal align */
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.restart {
+    background-color: white;
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid rgb(45, 134, 207);
+    transform: all 0.2s ease;
+    /* whenever we move curser it will convert to hand */
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+
+.restart:hover {
+    background-color: rgb(45, 134, 207);
+    color: white
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    padding-left: 40px;
+}
+
+.header {
+    display: flex;
+    color: burlywood;
+    font-size: 24px;
+}
+
+/* giving space b/w span Player-X & Player-O */
+.header .player-x {
+    flex: 1;
+    border-bottom: 5px solid rgba(226, 56, 56, 0.671);
+    padding-bottom: 10px;
+}
+
+.header .player-o {
+    flex: 1;
+    border-bottom: 5px solid rgba(226, 56, 56, 0.671);;
+    padding-bottom: 10px;
+}
+
+/* for creating the grid */
+.board {
+    /* background-color: aqua; */
+    display: grid;
+    /* 1fr means we are asking each tiles to take eql fraction of space */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.board-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* :not(:nth-child(3n)) -> means tile which are in position of multiple of 3 except them */
+.board-tile:not(:nth-child(3n)) {
+    border-right: 3px solid rgba(45, 134, 207, 0.418);
+}
+
+.board-tile:not(:nth-last-child(-n+3)) {
+    border-bottom: 3px solid rgba(45, 134, 207, 0.418);
+}
+
+.board-tile:hover {
+    background: #eee;
+}
