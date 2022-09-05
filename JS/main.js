@@ -7,6 +7,7 @@ import GameView from "./GameView.js"
 let game=new Game();
 let gameView=new GameView();
 
+gameView.updateTurn( game );
 // gameView.updateBoard( game );
 // // console.log( "Har Har Mahadev ");
 // console.log( game.board );
@@ -34,9 +35,35 @@ function onTileClick( i ) {
     // then change the turn to next person
     // then update the board 
     // console.log(i);
-    game.makeMove( i );
-    gameView.updateBoard( game ) ;
-    game.nextTurn();
+    let flg=game.makeMove( i );
+    if( flg ){
+        gameView.updateBoard( game ) ;
+        game.nextTurn();  
+        gameView.updateTurn(game) ;      
+    }
+    else{
+        gameView.updateBoard( game ) ;
+        // game.win_flg=true ;
+    }
+    
 }
+
+// functionality for start new game
+document.querySelector(".restart").addEventListener("click" , ()=> {
+    console.log( " NEW GAME TRIGGER ");
+    // console.log( game.board );
+    // for( let itr=0 ; itr<9 ; itr++ ){
+    //     game.board[itr]=null ;
+    // }
+
+    // or
+    game = new Game () ;
+    gameView.upd_flg=false;
+    gameView.updateBoard( game ) ;
+    gameView.updateTurn(game) ;
+    // console.log( game.board );
+
+    
+})
 
 
