@@ -7,7 +7,7 @@
 
 body {
     /* font-family: */
-    color: rgb(45, 134, 207)
+    color: rgb(19, 86, 141)
 }
 
 .wrapper {
@@ -36,7 +36,7 @@ h1 {
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    border: 2px solid rgb(45, 134, 207);
+    border: 2px solid rgb(19, 86, 141);
     transform: all 0.2s ease;
     /* whenever we move curser it will convert to hand */
     cursor: pointer;
@@ -45,8 +45,9 @@ h1 {
 }
 
 .restart:hover {
-    background-color: rgb(45, 134, 207);
-    color: white
+    background-color:rgb(19, 86, 141);
+    color: white  ;
+    /* color :  */
 }
 
 .game {
